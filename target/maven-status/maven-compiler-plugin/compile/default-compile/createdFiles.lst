@@ -1,0 +1,9 @@
+com/co/app/biblioteca/dto/RecursoDTO.class
+com/co/app/biblioteca/repositories/RepositorioRecurso.class
+com/co/app/biblioteca/utils/Area.class
+com/co/app/biblioteca/controllers/ControladorRecurso.class
+com/co/app/biblioteca/BibliotecaApplication.class
+com/co/app/biblioteca/mappers/RecursoMapper.class
+com/sofka/biblioteca/model/Recurso.class
+com/co/app/biblioteca/services/ServicioRecurso.class
+com/co/app/biblioteca/utils/Tipo.class
