@@ -1,15 +1,9 @@
 package com.co.app.biblioteca.service;
 
-import com.co.app.biblioteca.mappers.RecursoMapper;
 import com.co.app.biblioteca.services.ServicioRecurso;
 import com.co.app.biblioteca.utils.Area;
 import com.co.app.biblioteca.utils.Tipo;
-import com.co.app.biblioteca.dto.RecursoDTO;
-import com.co.app.biblioteca.mappers.RecursoMapper;
 import com.sofka.biblioteca.model.Recurso;
-import com.co.app.biblioteca.repositories.RepositorioRecurso;
-import com.co.app.biblioteca.utils.Area;
-import com.co.app.biblioteca.utils.Tipo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -20,7 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 
 @SpringBootTest
