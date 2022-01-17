@@ -16,7 +16,7 @@ public class RecursoMapper {
     public Function<RecursoDTO, Recurso> mapperToRecurso(String id) {
         return updateRecurso -> {
             var recurso = new Recurso();
-            recurso.setId(id);
+            recurso.setId(updateRecurso.getId());
             recurso.setTipo(updateRecurso.getTipo());
             recurso.setDisponible(updateRecurso.isDisponible());
             recurso.setArea(updateRecurso.getArea());

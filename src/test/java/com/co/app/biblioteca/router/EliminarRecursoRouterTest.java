@@ -2,7 +2,7 @@ package com.co.app.biblioteca.router;
 
 import com.co.app.biblioteca.collections.Recurso;
 import com.co.app.biblioteca.mapper.RecursoMapper;
-import com.co.app.biblioteca.repositories.RepositorioRecurso;
+import com.co.app.biblioteca.repository.RepositorioRecurso;
 import com.co.app.biblioteca.useCase.UseCaseEliminarRecurso;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

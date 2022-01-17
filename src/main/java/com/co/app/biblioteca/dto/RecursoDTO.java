@@ -19,9 +19,9 @@ public class RecursoDTO {
     }
 
     public RecursoDTO(Tipo tipo, Area area, String nombre) {
+        this.tipo = tipo;
         this.area = area;
         this.nombre = nombre;
-        this.tipo = tipo;
     }
 
     public RecursoDTO(String id, Tipo tipo, boolean disponible, Area area, String nombre, LocalDate fecha) {

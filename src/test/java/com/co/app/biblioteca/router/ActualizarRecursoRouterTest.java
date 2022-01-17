@@ -3,7 +3,7 @@ package com.co.app.biblioteca.router;
 import com.co.app.biblioteca.collections.Recurso;
 import com.co.app.biblioteca.dto.RecursoDTO;
 import com.co.app.biblioteca.mapper.RecursoMapper;
-import com.co.app.biblioteca.repositories.RepositorioRecurso;
+import com.co.app.biblioteca.repository.RepositorioRecurso;
 import com.co.app.biblioteca.useCase.UseCaseActualizarRecurso;
 import com.co.app.biblioteca.utils.Area;
 import com.co.app.biblioteca.utils.Tipo;
