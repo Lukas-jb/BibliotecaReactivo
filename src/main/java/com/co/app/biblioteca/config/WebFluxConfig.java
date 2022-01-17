@@ -12,11 +12,11 @@ import org.springframework.web.reactive.config.WebFluxConfigurerComposite;
 public class WebFluxConfig implements WebFluxConfigurer {
 
     @Bean
-    public WebFluxConfigurerComposite corsConfigurer(){
+    public WebFluxConfigurer corsConfigurer(){
         return new WebFluxConfigurerComposite() {
             @Override
             public void addCorsMappings(CorsRegistry registry){
-                registry.addMapping("/*").allowedOrigins("")
+                registry.addMapping("/**").allowedOrigins("*")
                         .allowedMethods("*");
             }
         };

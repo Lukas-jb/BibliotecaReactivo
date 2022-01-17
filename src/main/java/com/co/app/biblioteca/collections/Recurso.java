@@ -1,14 +1,15 @@
 package com.co.app.biblioteca.collections;
 
+import com.co.app.biblioteca.utils.Area;
 import com.co.app.biblioteca.utils.Tipo;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.awt.geom.Area;
+
 import java.time.LocalDate;
 
 @Document
-public class Recursor {
+public class Recurso {
 
     @Id
     private String id;
@@ -18,17 +19,17 @@ public class Recursor {
     private String nombre;
     private LocalDate fecha;
 
-    public Recursor() {
+    public Recurso() {
     }
 
-    public Recursor(String id, Tipo tipo, Area area, String nombre) {
+    public Recurso(String id, Tipo tipo, Area area, String nombre) {
         this.id = id;
         this.tipo = tipo;
         this.area = area;
         this.nombre = nombre;
     }
 
-    public Recursor(Tipo tipo, Area area, String nombre) {
+    public Recurso(Tipo tipo, Area area, String nombre) {
         this.tipo = tipo;
         this.area = area;
         this.nombre = nombre;

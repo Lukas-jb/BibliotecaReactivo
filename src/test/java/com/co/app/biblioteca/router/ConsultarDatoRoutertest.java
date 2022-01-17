@@ -1,9 +1,9 @@
 package com.co.app.biblioteca.router;
 
-import com.co.app.biblioteca.collections.Recursor;
+import com.co.app.biblioteca.collections.Recurso;
 import com.co.app.biblioteca.useCase.UseCaseCrear;
-import com.co.app.biblioteca.dto.DatoDTO;
-import com.co.app.biblioteca.mappers.MapperUtils;
+import com.co.app.biblioteca.dto.RecursoDTO;
+import com.co.app.biblioteca.mapper.RecursoMapper;
 import com.co.app.biblioteca.repositories.Repositorio;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 
 @WebFluxTest
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {ConsultaDatoRouter.class, UseCaseCrear.class, MapperUtils.class})
+@ContextConfiguration(classes = {ConsultaRecursoRouter.class, UseCaseCrear.class, RecursoMapper.class})
 public class ConsultarDatoRoutertest {
 
     @MockBean
@@ -31,9 +31,9 @@ public class ConsultarDatoRoutertest {
 
     @Test
     public void testGetDatos() {
-        Recursor dato1 = new Recursor();
+        Recurso dato1 = new Recurso();
         dato1.setInformacion("Informacion 1");
-        Recursor dato2 = new Recursor();
+        Recurso dato2 = new Recurso();
         dato2.setInformacion("Informacion 2");
 
         when(repositorio.findAll()).thenReturn(Flux.just(dato1, dato2));
@@ -42,7 +42,7 @@ public class ConsultarDatoRoutertest {
                 .uri("/consultar")
                 .exchange()
                 .expectStatus().isOk()
-                .expectBodyList(DatoDTO.class)
+                .expectBodyList(RecursoDTO.class)
                 .value(userResponse -> {
                             Assertions.assertThat(userResponse.get(0).getInformacion()).isEqualTo(dato1.getInformacion());
                             Assertions.assertThat(userResponse.get(1).getInformacion()).isEqualTo(dato2.getInformacion());

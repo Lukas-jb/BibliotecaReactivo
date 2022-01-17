@@ -1,9 +1,9 @@
 package com.co.app.biblioteca.useCase;
 
 
-import com.co.app.biblioteca.collections.Recursor;
-import com.co.app.biblioteca.dto.DatoDTO;
-import com.co.app.biblioteca.mappers.MapperUtils;
+import com.co.app.biblioteca.collections.Recurso;
+import com.co.app.biblioteca.dto.RecursoDTO;
+import com.co.app.biblioteca.mapper.RecursoMapper;
 import com.co.app.biblioteca.repositories.Repositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,17 +15,17 @@ import reactor.core.publisher.Mono;
 public class UseCaseCrear implements GuardarDato {
 
     private final Repositorio repositorio;
-    private final MapperUtils mapperUtils;
+    private final RecursoMapper mapperUtils;
 
     @Autowired
-    public UseCaseCrear(Repositorio repositorio, MapperUtils mapperUtils) {
+    public UseCaseCrear(Repositorio repositorio, RecursoMapper mapperUtils) {
         this.repositorio = repositorio;
         this.mapperUtils = mapperUtils;
     }
 
     @Override
-    public Mono<String> apply(DatoDTO datoDTO){
-        return repositorio.save(mapperUtils.mapperToDato(null).apply(datoDTO)).map(Recursor::getId);
+    public Mono<String> apply(RecursoDTO datoDTO){
+        return repositorio.save(mapperUtils.mapperToDato(null).apply(datoDTO)).map(Recurso::getId);
     }
 
 }

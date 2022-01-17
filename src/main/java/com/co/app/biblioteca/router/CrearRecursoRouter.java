@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
 @Configuration
-public class CrearDatoRouter {
+public class CrearRecursoRouter {
 
     @Bean
     public RouterFunction<ServerResponse> createQuestion(UseCaseCrear useCaseCrear){

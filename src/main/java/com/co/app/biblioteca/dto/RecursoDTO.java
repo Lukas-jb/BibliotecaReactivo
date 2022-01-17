@@ -1,20 +1,36 @@
 package com.co.app.biblioteca.dto;
 
-import javax.validation.constraints.NotBlank;
-import java.util.Objects;
 
-public class DatoDTO {
+import com.co.app.biblioteca.utils.Area;
+import com.co.app.biblioteca.utils.Tipo;
+
+import java.time.LocalDate;
+
+public class RecursoDTO {
 
     private String id;
-    @NotBlank
-    private  String informacion;
+    private Tipo tipo;
+    private boolean disponible;
+    private Area area;
+    private String nombre;
+    private LocalDate fecha;
 
-    public DatoDTO() {
+    public RecursoDTO() {
     }
 
-    public DatoDTO(String id, String informacion) {
+    public RecursoDTO(Tipo tipo, Area area, String nombre) {
+        this.area = area;
+        this.nombre = nombre;
+        this.tipo = tipo;
+    }
+
+    public RecursoDTO(String id, Tipo tipo, boolean disponible, Area area, String nombre, LocalDate fecha) {
         this.id = id;
-        this.informacion = informacion;
+        this.tipo = tipo;
+        this.disponible = disponible;
+        this.area = area;
+        this.nombre = nombre;
+        this.fecha = fecha;
     }
 
     public String getId() {
@@ -25,32 +41,44 @@ public class DatoDTO {
         this.id = id;
     }
 
-    public String getInformacion() {
-        return informacion;
+    public Tipo getTipo() {
+        return tipo;
     }
 
-    public void setInformacion(String informacion) {
-        this.informacion = informacion;
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DatoDTO datoDTO = (DatoDTO) o;
-        return Objects.equals(id, datoDTO.id) && Objects.equals(informacion, datoDTO.informacion);
+    public boolean isDisponible() {
+        return disponible;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, informacion);
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 
-    @Override
-    public String toString() {
-        return "DatoDTO{" +
-                "id='" + id + '\'' +
-                ", informacion='" + informacion + '\'' +
-                '}';
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 }
+
