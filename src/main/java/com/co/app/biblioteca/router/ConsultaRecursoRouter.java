@@ -1,7 +1,7 @@
 package com.co.app.biblioteca.router;
 
 import com.co.app.biblioteca.useCase.UseCaseListar;
-import com.co.app.biblioteca.dto.DatoDTO;
+import com.co.app.biblioteca.dto.RecursoDTO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ public class ConsultaDatoRouter {
                 GET("/consutar").and(accept(MediaType.APPLICATION_JSON)),
                 request ->ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(BodyInserters.fromPublisher(useCaseListar.get(), DatoDTO.class))
+                        .body(BodyInserters.fromPublisher(useCaseListar.get(), RecursoDTO.class))
         );
     }
 }
