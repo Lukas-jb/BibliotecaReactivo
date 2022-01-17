@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="biblioteca" />
+        <module name="app-libreria Recativo" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="app-libreria Recativo" options="-parameters" />
       <module name="biblioteca" options="-parameters" />
     </option>
   </component>

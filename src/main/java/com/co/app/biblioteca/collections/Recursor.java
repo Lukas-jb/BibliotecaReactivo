@@ -1,12 +1,10 @@
-package com.co.app.biblioteca.Collections;
+package com.co.app.biblioteca.collections;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.lang.annotation.Documented;
-
 @Document
-public class Dato {
+public class Recursor {
 
     @Id
     private String id;
